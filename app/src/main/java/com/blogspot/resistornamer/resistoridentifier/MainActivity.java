@@ -1,6 +1,9 @@
 package com.blogspot.resistornamer.resistoridentifier;
 
 import android.content.Intent;
+import android.graphics.*;
+import android.hardware.camera2.CameraCaptureSession;
+import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,6 +17,8 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
     }
 
 
@@ -39,8 +44,14 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
     public void startCamera(View view) {
-        Intent intent = new Intent(this, Camera.class);
-        startActivity(intent);
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent,1);
     }
-
+    @Override
+    protected void  onActivityResult(int requestCode, int resultCode, Intent data){
+        if(requestCode== 1 && resultCode== RESULT_OK){
+            Bundle extras = data.getExtras();
+            Bitmap photo = (Bitmap) extras.get("data");
+        }
+    }
 }

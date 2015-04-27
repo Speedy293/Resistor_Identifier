@@ -1,9 +1,18 @@
 package com.blogspot.resistornamer.resistoridentifier;
 
+import android.content.Context;
+import android.hardware.camera2.CameraCaptureSession;
+import android.hardware.camera2.CameraDevice;
+import android.hardware.camera2.CameraManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
+import android.view.View;
+import android.view.ViewGroup;
 
 
 public class Camera extends ActionBarActivity {
@@ -13,6 +22,7 @@ public class Camera extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
     }
+
 
 
     @Override
@@ -37,3 +47,4 @@ public class Camera extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
