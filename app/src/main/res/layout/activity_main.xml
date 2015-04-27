@@ -19,7 +19,15 @@
         android:layout_height="wrap_content"
         android:hint="@string/button"
         android:onClick="startCamera"
-        android:layout_marginTop="350dp" />
+        android:layout_marginTop="360dp" />
+    <Button
+        android:id="@+id/manualEntry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/manualEntry"
+        android:onClick="manualEntry"
+        android:layout_marginTop="400dp" />
+
 
 
 </RelativeLayout>

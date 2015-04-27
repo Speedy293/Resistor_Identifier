@@ -2,7 +2,6 @@ package com.blogspot.resistornamer.resistoridentifier;
 
 import android.content.Intent;
 import android.graphics.*;
-import android.hardware.camera2.CameraCaptureSession;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -14,7 +13,6 @@ import android.widget.ImageView;
 
 public class MainActivity extends ActionBarActivity {
 //Clone Worked
-    ImageView myImageView= (ImageView)findViewById(R.id.imageView);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +52,17 @@ public class MainActivity extends ActionBarActivity {
     //Stores Image?
     @Override
     protected void  onActivityResult(int requestCode, int resultCode, Intent data){
+        ImageView myImageView= (ImageView)findViewById(R.id.imageView);
         if(requestCode== 1 && resultCode== RESULT_OK){
             Bundle extras = data.getExtras();
             Bitmap photo = (Bitmap) extras.get("data");
+            myImageView.setImageBitmap(photo);
         }
+    }
+
+    //Intent for manual entry
+    public void manualEntry(View view){
+        Intent intent = new Intent(this, ManualEntry.class);
+        startActivity(intent);
     }
 }
