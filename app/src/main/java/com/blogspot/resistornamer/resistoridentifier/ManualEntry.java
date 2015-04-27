@@ -47,7 +47,10 @@ public class ManualEntry extends ActionBarActivity {
                 if(checked){
                     Spinner five = (Spinner) findViewById(R.id.bandFive);
                     Spinner four = (Spinner)findViewById(R.id.bandFour);
+                    //Spinner six = (Spinner)findViewById(R.id.bandSix);
                     five.setEnabled(false);
+                    //four.setEnabled(false);
+                    //six.setEnabled(true);
 
                 }
                 break;
@@ -55,9 +58,15 @@ public class ManualEntry extends ActionBarActivity {
                 if(checked){
                     Spinner five = (Spinner)findViewById(R.id.bandFive);
                     Spinner four = (Spinner)findViewById(R.id.bandFour);
+                    //Spinner six = (Spinner)findViewById(R.id.bandSix);
                     five.setEnabled(true);
-
+                    four.setEnabled(true);
+                    //six.setEnabled(false);
                 }
         }
+    }
+    public int compute(View view){
+        int ohms = 0;
+        return ohms;
     }
 }
