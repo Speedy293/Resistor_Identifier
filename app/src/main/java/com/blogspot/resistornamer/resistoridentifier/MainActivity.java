@@ -9,10 +9,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 
 public class MainActivity extends ActionBarActivity {
 //Clone Worked
+    ImageView myImageView= (ImageView)findViewById(R.id.imageView);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
