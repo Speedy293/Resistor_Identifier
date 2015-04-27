@@ -48,12 +48,14 @@ public class ManualEntry extends ActionBarActivity {
                     Spinner five = (Spinner) findViewById(R.id.bandFive);
                     Spinner four = (Spinner)findViewById(R.id.bandFour);
                     five.setEnabled(false);
+
                 }
                 break;
             case R.id.five:
                 if(checked){
                     Spinner five = (Spinner)findViewById(R.id.bandFive);
                     Spinner four = (Spinner)findViewById(R.id.bandFour);
+                    five.setEnabled(true);
 
                 }
         }

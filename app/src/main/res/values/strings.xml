@@ -21,4 +21,8 @@
         <item>Grey</item>
         <item>White</item>
     </string-array>
+    <string-array name="percentage">
+        <item>Gold</item>
+        <item>Silver</item>
+    </string-array>
 </resources>
