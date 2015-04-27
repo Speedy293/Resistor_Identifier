@@ -9,4 +9,16 @@
     <string name="title_activity_manual_entry">ManualEntry</string>
     <string name="fourBand">Four Band</string>
     <string name="fiveBand">Five Band</string>
+    <string-array name="bandColors">
+        <item>Black</item>
+        <item>Brown</item>
+        <item>Red</item>
+        <item>Orange</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Violet</item>
+        <item>Grey</item>
+        <item>White</item>
+    </string-array>
 </resources>

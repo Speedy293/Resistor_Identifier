@@ -4,6 +4,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RadioButton;
+import android.widget.Spinner;
 
 
 public class ManualEntry extends ActionBarActivity {
@@ -35,5 +38,24 @@ public class ManualEntry extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    //Handling Radio Button Clicks
+    public void onRadioClick(View view){
+        boolean checked = ((RadioButton)view).isChecked();
+        switch(view.getId()){
+            case R.id.four:
+                if(checked){
+                    Spinner five = (Spinner) findViewById(R.id.bandFive);
+                    Spinner four = (Spinner)findViewById(R.id.bandFour);
+                    five.setEnabled(false);
+                }
+                break;
+            case R.id.five:
+                if(checked){
+                    Spinner five = (Spinner)findViewById(R.id.bandFive);
+                    Spinner four = (Spinner)findViewById(R.id.bandFour);
+
+                }
+        }
     }
 }

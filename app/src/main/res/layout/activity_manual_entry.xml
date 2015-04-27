@@ -26,7 +26,37 @@
     </RadioGroup>
 
     <Spinner
-        android:layout_width=""
-        android:layout_height=""></Spinner>
+        android:id="@+id/bandOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/bandColors"
+        android:layout_marginTop="50dp"/>
+    <Spinner
+        android:id="@+id/bandTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/bandColors"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="100dp" />
+    <Spinner
+        android:id="@+id/bandThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/bandColors"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="200dp" />
+    <Spinner
+        android:id="@+id/bandFour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/bandColors"
+        android:layout_marginTop="100dp"/>
+    <Spinner
+        android:id="@+id/bandFive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/bandColors"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="100dp" />
     
 </RelativeLayout>
