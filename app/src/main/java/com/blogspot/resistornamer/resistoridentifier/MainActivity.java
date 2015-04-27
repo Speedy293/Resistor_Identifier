@@ -43,10 +43,12 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    //Opens a camera when the button is clicked
     public void startCamera(View view) {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent,1);
     }
+    //Stores Image?
     @Override
     protected void  onActivityResult(int requestCode, int resultCode, Intent data){
         if(requestCode== 1 && resultCode== RESULT_OK){
