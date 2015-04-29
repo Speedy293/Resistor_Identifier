@@ -5,9 +5,13 @@
         <!-- Customize your theme here. -->
     </style>
     <color name="custom_theme_color">#e0a0ff</color>
+    <color name="white">#FFFFFF</color>
     <style name= "CustomTheme" parent="AppTheme">
         <item name = "android:windowBackground">@color/custom_theme_color</item>
         <item name = "android:colorBackground">@color/custom_theme_color</item>
+    </style>
+    <style name="Spinner" parent = "AppTheme">
+        <item name = "android:background">@color/white</item>
     </style>
 
 </resources>

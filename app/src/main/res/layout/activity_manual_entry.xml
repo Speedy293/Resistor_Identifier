@@ -7,19 +7,23 @@
     tools:context="com.blogspot.resistornamer.resistoridentifier.ManualEntry">
 
     <RadioGroup
+        android:id="@+id/band_number"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
             <RadioButton
                 android:id="@+id/four"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="@string/fourBand"
                 android:onClick="onRadioClick"/>
             <RadioButton
                 android:id="@+id/five"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="@string/fiveBand"
                 android:onClick="onRadioClick"/>
@@ -30,41 +34,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:entries="@array/bandColors"
-        android:layout_marginTop="50dp"/>
+        android:layout_below="@id/band_number"
+        android:layout_alignParentLeft="true"
+        />
     <Spinner
         android:id="@+id/bandTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:entries="@array/bandColors"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="100dp" />
+        android:layout_below="@id/bandOne"
+         />
     <Spinner
         android:id="@+id/bandThree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:entries="@array/bandColors"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="200dp" />
+        android:layout_below="@id/bandTwo"/>
     <Spinner
         android:id="@+id/bandFour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:entries="@array/bandSpecial"
-        android:layout_marginTop="100dp"/>
+        android:layout_below="@id/bandThree"/>
     <Spinner
         android:id="@+id/bandFive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:entries="@array/percentage"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="100dp" />
+        android:layout_below="@id/bandFour"
+        />
     <Button
         android:id="@+id/submit"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
         android:layout_height="wrap_content"
         android:hint="@string/submit"
         android:onClick="compute"
-        android:layout_marginTop="400dp"
-        android:layout_marginLeft="125dp" />
+        android:layout_alignParentBottom="true"
+        />
 
 </RelativeLayout>
