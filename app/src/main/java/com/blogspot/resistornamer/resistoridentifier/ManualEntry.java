@@ -12,12 +12,6 @@ import java.util.Hashtable;
 
 
 public class ManualEntry extends ActionBarActivity {
-    private Spinner spinnerOne=(Spinner) findViewById(R.id.bandOne);
-    private Spinner spinnerTwo=(Spinner) findViewById(R.id.bandTwo);
-    private Spinner spinnerThree=(Spinner) findViewById(R.id.bandThree);
-    private Spinner spinnerFour=(Spinner) findViewById(R.id.bandFour);
-    private Spinner spinnerFive=(Spinner) findViewById(R.id.bandFive);
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +43,11 @@ public class ManualEntry extends ActionBarActivity {
     }
     //Handling Radio Button Clicks
     public void onRadioClick(View view){
+        /*Spinner spinnerOne=(Spinner) findViewById(R.id.bandOne);
+        Spinner spinnerTwo=(Spinner) findViewById(R.id.bandTwo);
+        Spinner spinnerThree=(Spinner) findViewById(R.id.bandThree);*/
+        Spinner spinnerFour=(Spinner) findViewById(R.id.bandFour);
+        Spinner spinnerFive=(Spinner) findViewById(R.id.bandFive);
         boolean checked = ((RadioButton)view).isChecked();
         switch(view.getId()){
             case R.id.four:
@@ -64,6 +63,12 @@ public class ManualEntry extends ActionBarActivity {
         }
     }
     public String compute(View view){
+        Spinner spinnerOne=(Spinner) findViewById(R.id.bandOne);
+        Spinner spinnerTwo=(Spinner) findViewById(R.id.bandTwo);
+        Spinner spinnerThree=(Spinner) findViewById(R.id.bandThree);
+        Spinner spinnerFour=(Spinner) findViewById(R.id.bandFour);
+        Spinner spinnerFive=(Spinner) findViewById(R.id.bandFive);
+
         Hashtable colors = new Hashtable();
         colors.put("Black", 0);
         colors.put("Brown", 1);
@@ -90,7 +95,7 @@ public class ManualEntry extends ActionBarActivity {
         per.put("Gold", "+/-5%");
         per.put("Silver", "+/-10%");
 
-        String ohms = new String();
+        String ohms ="";
 
         String one = spinnerOne.getSelectedItem().toString();
         String two = spinnerTwo.getSelectedItem().toString();
@@ -113,6 +118,7 @@ public class ManualEntry extends ActionBarActivity {
                     ohms = ""+val+per.get(five);
                 }
         }
+        System.out.println(ohms);
         return ohms;
     }
 }
