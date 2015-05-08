@@ -12,6 +12,8 @@ import java.util.Hashtable;
 
 
 public class ManualEntry extends ActionBarActivity {
+    private boolean fourV;
+    private boolean fiveV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,16 +55,23 @@ public class ManualEntry extends ActionBarActivity {
             case R.id.four:
                 if(checked){
                     spinnerFive.setEnabled(false);
+                    fourV = true;
+                    fiveV = false;
                 }
                 break;
             case R.id.five:
                 if(checked){
                     spinnerFive.setEnabled(true);
                     spinnerFour.setEnabled(true);
+                    fiveV = true;
+                    fourV = false;
                 }
         }
     }
-    public String compute(View view){
+    public void compute(View view){
+        calculate(view);
+    }
+    public void calculate(View view){
         Spinner spinnerOne=(Spinner) findViewById(R.id.bandOne);
         Spinner spinnerTwo=(Spinner) findViewById(R.id.bandTwo);
         Spinner spinnerThree=(Spinner) findViewById(R.id.bandThree);
@@ -102,9 +111,9 @@ public class ManualEntry extends ActionBarActivity {
         String three = spinnerThree.getSelectedItem().toString();
         String four = spinnerFour.getSelectedItem().toString();
 
-        boolean checked = ((RadioButton)view).isChecked();
-
-        switch(view.getId()){
+        /*boolean checked = ((RadioButton)view).isChecked();
+*/
+        /*switch(view.getId()){
             case R.id.four:
                 if(checked){
                     int val = ((int)colors.get(one)*10+(int)colors.get(two)*10)*(int)mult.get(three);
@@ -117,8 +126,16 @@ public class ManualEntry extends ActionBarActivity {
                     int val = ((int)colors.get(one)*10+(int)colors.get(two)*10+(int)colors.get(three))*(int)mult.get(four);
                     ohms = ""+val+per.get(five);
                 }
+        }*/
+        if(fourV){
+            int val = ((int)colors.get(one)*10+(int)colors.get(two)*10)*(int)mult.get(three);
+            ohms = ""+val+per.get(four);
+        }
+        if(fiveV){
+            String five = spinnerFive.getSelectedItem().toString();
+            int val = ((int)colors.get(one)*10+(int)colors.get(two)*10+(int)colors.get(three))*(int)mult.get(four);
+            ohms = ""+val+per.get(five);
         }
         System.out.println(ohms);
-        return ohms;
     }
 }
