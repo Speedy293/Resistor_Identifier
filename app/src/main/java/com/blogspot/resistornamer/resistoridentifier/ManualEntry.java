@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.Hashtable;
 
@@ -137,5 +138,7 @@ public class ManualEntry extends ActionBarActivity {
             ohms = ""+val+per.get(five);
         }
         System.out.println(ohms);
+        TextView textView = (TextView)findViewById(R.id.answer);
+        textView.setText(ohms);
     }
 }

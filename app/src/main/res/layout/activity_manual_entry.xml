@@ -63,8 +63,17 @@
         android:entries="@array/percentage"
         android:layout_below="@id/bandFour"
         />
+    <TextView
+        android:id="@+id/answer"
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/submit"
+        android:textSize="20pt"
+        android:gravity="center"
+        />
     <Button
-        android:id="@+id/submit"
+        android:id="@id/submit"
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="wrap_content"
