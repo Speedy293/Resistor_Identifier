@@ -63,7 +63,7 @@ public class ManualEntry extends ActionBarActivity {
                 }
         }
     }
-    public int compute(View view){
+    public String compute(View view){
         Hashtable colors = new Hashtable();
         colors.put("Black", 0);
         colors.put("Brown", 1);
@@ -75,15 +75,44 @@ public class ManualEntry extends ActionBarActivity {
         colors.put("Violet", 7);
         colors.put("Grey", 8);
         colors.put("White", 9);
-        int ohms = 0;
+
+        Hashtable mult = new Hashtable();
+        mult.put("Black", 1);
+        mult.put("Brown", 10);
+        mult.put("Red", 100);
+        mult.put("Orange", 1000);
+        mult.put("Yellow", 10000);
+        mult.put("Green", 100000);
+        mult.put("Blue", 1000000);
+        mult.put("Violet", 10000000);
+
+        Hashtable per = new Hashtable();
+        per.put("Gold", "+/-5%");
+        per.put("Silver", "+/-10%");
+
+        String ohms = new String();
+
         String one = spinnerOne.getSelectedItem().toString();
         String two = spinnerTwo.getSelectedItem().toString();
         String three = spinnerThree.getSelectedItem().toString();
         String four = spinnerFour.getSelectedItem().toString();
-        /*if() {
-            String five = spinnerFive.getSelectedItem().toString();
-        }*/
 
+        boolean checked = ((RadioButton)view).isChecked();
+
+        switch(view.getId()){
+            case R.id.four:
+                if(checked){
+                    int val = ((int)colors.get(one)*10+(int)colors.get(two)*10)*(int)mult.get(three);
+                    ohms = ""+val+per.get(four);
+                }
+                break;
+            case R.id.five:
+                if(checked){
+                    String five = spinnerFive.getSelectedItem().toString();
+                    int val = ((int)colors.get(one)*10+(int)colors.get(two)*10+(int)colors.get(three))*(int)mult.get(four);
+                    ohms = ""+val+per.get(five);
+                }
+        }
         return ohms;
     }
 }
