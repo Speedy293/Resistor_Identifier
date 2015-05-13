@@ -33,17 +33,16 @@
         android:id="@+id/bandOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:entries="@array/bandColors"
         android:layout_below="@id/band_number"
+        android:entries = "@array/bandColors"
         android:layout_alignParentLeft="true"
         />
     <Spinner
         android:id="@+id/bandTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:entries="@array/bandColors"
         android:layout_below="@id/bandOne"
-         />
+        android:entries = "@array/bandColors"/>
     <Spinner
         android:id="@+id/bandThree"
         android:layout_width="wrap_content"

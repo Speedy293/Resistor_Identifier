@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -15,11 +16,19 @@ import java.util.Hashtable;
 public class ManualEntry extends ActionBarActivity {
     private boolean fourV;
     private boolean fiveV;
+    private Spinner spinnerOne;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual_entry);
+
+        spinnerOne =(Spinner) findViewById(R.id.bandOne);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.bandColors,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerOne.setAdapter(adapter);
+
     }
 
 
@@ -73,7 +82,7 @@ public class ManualEntry extends ActionBarActivity {
         calculate(view);
     }
     public void calculate(View view){
-        Spinner spinnerOne=(Spinner) findViewById(R.id.bandOne);
+        //Spinner spinnerOne=(Spinner) findViewById(R.id.bandOne);
         Spinner spinnerTwo=(Spinner) findViewById(R.id.bandTwo);
         Spinner spinnerThree=(Spinner) findViewById(R.id.bandThree);
         Spinner spinnerFour=(Spinner) findViewById(R.id.bandFour);
