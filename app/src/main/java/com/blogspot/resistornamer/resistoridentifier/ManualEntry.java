@@ -10,13 +10,14 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.Hashtable;
 
 
 public class ManualEntry extends ActionBarActivity {
     private boolean fourV;
     private boolean fiveV;
-    private Spinner spinnerOne;
+    private Spinner spinnerOne, spinnerTwo, spinnerThree, spinnerFour, spinnerFive;
 
 
     @Override
@@ -24,11 +25,27 @@ public class ManualEntry extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual_entry);
 
+        // Setting up the ArrayAdapters for all the Spinners
         spinnerOne =(Spinner) findViewById(R.id.bandOne);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.bandColors,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerOne.setAdapter(adapter);
 
+        spinnerTwo = (Spinner) findViewById(R.id.bandTwo);
+        spinnerTwo.setAdapter(adapter);
+
+        spinnerThree = (Spinner) findViewById(R.id.bandThree);
+        spinnerThree.setAdapter(adapter);
+
+        spinnerFour = (Spinner) findViewById(R.id.bandFour);
+        ArrayAdapter<CharSequence> specialAdapter = ArrayAdapter.createFromResource(this, R.array.bandSpecial,android.R.layout.simple_spinner_item);
+        specialAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerFour.setAdapter(specialAdapter);
+
+        spinnerFive = (Spinner) findViewById(R.id.bandFive);
+        ArrayAdapter<CharSequence> percentageAdapter = ArrayAdapter.createFromResource(this,R.array.percentage,android.R.layout.simple_spinner_item);
+        percentageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerFive.setAdapter(percentageAdapter);
     }
 
 
@@ -82,11 +99,12 @@ public class ManualEntry extends ActionBarActivity {
         calculate(view);
     }
     public void calculate(View view){
+        // Set all of these up as private variables and created them in the onCreate method.
         //Spinner spinnerOne=(Spinner) findViewById(R.id.bandOne);
-        Spinner spinnerTwo=(Spinner) findViewById(R.id.bandTwo);
-        Spinner spinnerThree=(Spinner) findViewById(R.id.bandThree);
-        Spinner spinnerFour=(Spinner) findViewById(R.id.bandFour);
-        Spinner spinnerFive=(Spinner) findViewById(R.id.bandFive);
+        //Spinner spinnerTwo=(Spinner) findViewById(R.id.bandTwo);
+        //Spinner spinnerThree=(Spinner) findViewById(R.id.bandThree);
+        //Spinner spinnerFour=(Spinner) findViewById(R.id.bandFour);
+        //Spinner spinnerFive=(Spinner) findViewById(R.id.bandFive);
 
         Hashtable colors = new Hashtable();
         colors.put("Black", 0);
