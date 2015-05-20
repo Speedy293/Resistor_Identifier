@@ -25,7 +25,7 @@ public class ManualEntry extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual_entry);
 
-        // Setting up the ArrayAdapters for all the Spinners
+        // Setting up the ArrayAdapters for all the Spinners trying to commit.
         spinnerOne =(Spinner) findViewById(R.id.bandOne);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.bandColors,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
