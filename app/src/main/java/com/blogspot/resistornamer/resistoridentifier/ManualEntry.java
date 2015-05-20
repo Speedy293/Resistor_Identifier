@@ -72,11 +72,8 @@ public class ManualEntry extends ActionBarActivity {
     }
     //Handling Radio Button Clicks
     public void onRadioClick(View view){
-        /*Spinner spinnerOne=(Spinner) findViewById(R.id.bandOne);
-        Spinner spinnerTwo=(Spinner) findViewById(R.id.bandTwo);
-        Spinner spinnerThree=(Spinner) findViewById(R.id.bandThree);*/
-        Spinner spinnerFour=(Spinner) findViewById(R.id.bandFour);
-        Spinner spinnerFive=(Spinner) findViewById(R.id.bandFive);
+        //Spinner spinnerFour=(Spinner) findViewById(R.id.bandFour);
+        //Spinner spinnerFive=(Spinner) findViewById(R.id.bandFive);
         boolean checked = ((RadioButton)view).isChecked();
         switch(view.getId()){
             case R.id.four:
@@ -84,6 +81,10 @@ public class ManualEntry extends ActionBarActivity {
                     spinnerFive.setEnabled(false);
                     fourV = true;
                     fiveV = false;
+                    //adapter
+                    ArrayAdapter<CharSequence> gs = ArrayAdapter.createFromResource(this, R.array.percentage,android.R.layout.simple_spinner_item);
+                    gs.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spinnerFour.setAdapter(gs);
                 }
                 break;
             case R.id.five:
@@ -92,6 +93,9 @@ public class ManualEntry extends ActionBarActivity {
                     spinnerFour.setEnabled(true);
                     fiveV = true;
                     fourV = false;
+                    ArrayAdapter<CharSequence> color = ArrayAdapter.createFromResource(this, R.array.bandColors,android.R.layout.simple_spinner_item);
+                    color.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spinnerFour.setAdapter(color);
                 }
         }
     }
@@ -99,7 +103,6 @@ public class ManualEntry extends ActionBarActivity {
         calculate(view);
     }
     public void calculate(View view){
-        // Set all of these up as private variables and created them in the onCreate method.
         //Spinner spinnerOne=(Spinner) findViewById(R.id.bandOne);
         //Spinner spinnerTwo=(Spinner) findViewById(R.id.bandTwo);
         //Spinner spinnerThree=(Spinner) findViewById(R.id.bandThree);
@@ -139,22 +142,7 @@ public class ManualEntry extends ActionBarActivity {
         String three = spinnerThree.getSelectedItem().toString();
         String four = spinnerFour.getSelectedItem().toString();
 
-        /*boolean checked = ((RadioButton)view).isChecked();
-*/
-        /*switch(view.getId()){
-            case R.id.four:
-                if(checked){
-                    int val = ((int)colors.get(one)*10+(int)colors.get(two)*10)*(int)mult.get(three);
-                    ohms = ""+val+per.get(four);
-                }
-                break;
-            case R.id.five:
-                if(checked){
-                    String five = spinnerFive.getSelectedItem().toString();
-                    int val = ((int)colors.get(one)*10+(int)colors.get(two)*10+(int)colors.get(three))*(int)mult.get(four);
-                    ohms = ""+val+per.get(five);
-                }
-        }*/
+
         if(fourV){
             int val = ((int)colors.get(one)*10+(int)colors.get(two)*10)*(int)mult.get(three);
             ohms = ""+val+per.get(four);

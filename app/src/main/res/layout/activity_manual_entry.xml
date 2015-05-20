@@ -62,6 +62,20 @@
         android:entries="@array/percentage"
         android:layout_below="@id/bandFour"
         />
+    <!--<ImageView
+        android:id="@+id/left"
+        android:src="@drawable/left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/answer"/>
+    <ImageView
+        android:id="@+id/right"
+        android:src="@drawable/right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/left"
+        android:layout_above="@id/answer"
+        />-->
     <TextView
         android:id="@+id/answer"
         android:text=""

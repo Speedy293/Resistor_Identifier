@@ -4,7 +4,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
     </style>
-    <color name="custom_theme_color">#e0a0ff</color>
+    <color name="custom_theme_color">#B2E0FF</color>
     <color name="white">#FFFFFF</color>
     <style name= "CustomTheme" parent="AppTheme">
         <item name = "android:windowBackground">@color/custom_theme_color</item>
