@@ -31,7 +31,7 @@
 
     <Spinner
         android:id="@+id/bandOne"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/band_number"
         android:entries = "@array/bandColors"
@@ -39,25 +39,25 @@
         />
     <Spinner
         android:id="@+id/bandTwo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/bandOne"
         android:entries = "@array/bandColors"/>
     <Spinner
         android:id="@+id/bandThree"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/bandColors"
         android:layout_below="@id/bandTwo"/>
     <Spinner
         android:id="@+id/bandFour"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/bandSpecial"
         android:layout_below="@id/bandThree"/>
     <Spinner
         android:id="@+id/bandFive"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/percentage"
         android:layout_below="@id/bandFour"
